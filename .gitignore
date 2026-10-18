@@ -6,6 +6,7 @@ __pycache__/
 *.xdelta
 
 game_dir.txt
+/build.bat
 tools/*.exe
 
 mods/*/pack/

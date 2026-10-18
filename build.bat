@@ -12,10 +12,10 @@ if not defined PY (
     goto end
 )
 
-set "XDELTA="
-if exist "tools\xdelta3.exe" set "XDELTA=tools\xdelta3.exe"
-if not defined XDELTA where xdelta3 >nul 2>nul && set "XDELTA=xdelta3"
-if not defined XDELTA (
+set "KRYPT_XDELTA="
+if exist "tools\xdelta3.exe" set "KRYPT_XDELTA=tools\xdelta3.exe"
+if not defined KRYPT_XDELTA where xdelta3 >nul 2>nul && set "KRYPT_XDELTA=xdelta3"
+if not defined KRYPT_XDELTA (
     echo xdelta3 was not found. Download it from https://github.com/jmacd/xdelta-gpl/releases
     echo and save it as tools\xdelta3.exe.
     goto end
@@ -35,10 +35,10 @@ set "VERSION="
 set /p "VERSION=Version, for example 1.0.0: "
 if not defined VERSION goto version
 
-%PY% tools\build_mod.py %* --version "%VERSION%" --game "%GAME%" --xdelta "%XDELTA%"
+%PY% tools\build_mod.py %* --version "%VERSION%" --game "%GAME%" --xdelta "%KRYPT_XDELTA%"
 if errorlevel 1 (
     echo.
-    echo The build failed. To use another game folder, delete game_dir.txt.
+    echo The build failed. Read the error above.
 )
 
 :end

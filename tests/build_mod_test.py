@@ -2,10 +2,14 @@
 import argparse
 import importlib.util
 import json
+import os
 from pathlib import Path
+import shutil
+import subprocess
 import tarfile
 import tempfile
 import unittest
+from unittest.mock import patch
 
 spec = importlib.util.spec_from_file_location('build_mod', Path(__file__).resolve().parents[1] / 'tools/build_mod.py')
 builder = importlib.util.module_from_spec(spec)
@@ -13,6 +17,45 @@ spec.loader.exec_module(builder)
 
 
 class ManifestTest(unittest.TestCase):
+    def test_patch_generation_ignores_inherited_xdelta_options(self):
+        executable=builder.ROOT/'tools/xdelta3.exe'
+        xdelta=str(executable) if executable.is_file() else shutil.which('xdelta3')
+        if not xdelta:
+            self.skipTest('xdelta3 is required for the patch integration check')
+        with tempfile.TemporaryDirectory(prefix='krypt patch test ') as temporary:
+            root=Path(temporary)
+            pack,game=root/'pack',root/'original game'
+            (pack/'files').mkdir(parents=True)
+            game.mkdir()
+            original=b'Original game resource.\n'*100
+            target=b'Translated game resource.\n'*100
+            xbe=b'Synthetic executable for builder tests'
+            (game/'default.xbe').write_bytes(xbe)
+            (game/'data.bin').write_bytes(original)
+            (pack/'files/data.bin').write_bytes(target)
+            mod=dict(id='PatchTest',name='Patch test',summary='Synthetic',authors=['Tester'],type='data',
+                     install_dir='packages/PatchTest',sources={'files/data.bin':{'file':'data.bin'}},versions=[])
+            index=root/'mods.json'
+            index.write_text(json.dumps(dict(schema=1,game={'xbe_sha256':builder.sha256(xbe)},
+                release_url='https://example.invalid/{id}-{version}.tar.xz',mods=[mod])))
+            with patch.object(builder,'INDEX',index),patch.dict(os.environ,{'XDELTA':xdelta}):
+                builder.build(argparse.Namespace(mod='PatchTest',version='1.0.0',pack=pack,game=game,
+                                                xdelta=xdelta,output=root/'dist',recomp='0.2.0'))
+                self.assertEqual(os.environ['XDELTA'],xdelta)
+            archive=root/'dist/PatchTest-1.0.0.tar.xz'
+            with tarfile.open(archive) as tar:
+                metadata=json.load(tar.extractfile('mod.json'))
+                self.assertEqual(len(metadata['patches']),1)
+                self.assertEqual(metadata['patches'][0]['target_sha256'],builder.sha256(target))
+                delta=root/'patch.xdelta'
+                delta.write_bytes(tar.extractfile('files/data.bin.xdelta').read())
+            environment=os.environ.copy()
+            environment.pop('XDELTA',None)
+            decoded=root/'decoded.bin'
+            subprocess.run([xdelta,'-d','-s',str(game/'data.bin'),str(delta),str(decoded)],env=environment,
+                           capture_output=True,check=True)
+            self.assertEqual(decoded.read_bytes(),target)
+
     def test_metadata_names_are_reserved_without_case_distinctions(self):
         for name in ('mod.json','MOD.JSON','manifest.json','MANIFEST.JSON'):
             with self.subTest(name=name), tempfile.TemporaryDirectory() as temporary:

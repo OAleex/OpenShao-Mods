@@ -35,10 +35,10 @@
         {
           "version": "2.0.0",
           "date": "2026-10-18",
-          "recomp": "0.1.0",
+          "recomp": "0.2.0",
           "url": "https://github.com/OAleex/ShaolinMonksRecompKrypt/releases/download/LanguagePack_PT-BR-v2.0.0/LanguagePack_PT-BR-2.0.0.tar.xz",
-          "size": 86597144,
-          "sha256": "6596c7ffbcce997a5d8bfe3444d6e1ef78f14a57bdd4ecacf6f8234a09a754c5",
+          "size": 86597184,
+          "sha256": "8ce1ebe91d8ce968cf60483d4c330fbf968b85843b3c45a76954a620bc3b6abf",
           "files": 1082,
           "patches": [
             {

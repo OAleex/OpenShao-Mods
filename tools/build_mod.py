@@ -4,6 +4,7 @@ import hashlib
 import io
 import json
 import lzma
+import os
 import re
 import shutil
 import struct
@@ -225,6 +226,9 @@ def build(args):
     archive_path = args.output / f'{mod["id"]}-{args.version}.tar.xz'
     temporary_path=archive_path.with_name(archive_path.name+'.building')
     entries = []
+    # XDELTA injects command-line options. Use only this builder's explicit flags.
+    delta_environment=os.environ.copy()
+    delta_environment.pop('XDELTA',None)
     print('building the archive, this takes a few minutes', flush=True)
     # one solid xz stream at the highest preset: similar files, such as a movie's stereo and surround audio,
     # compress against each other, which a ZIP's per-file compression cannot do
@@ -241,7 +245,7 @@ def build(args):
             original.write_bytes(data)
             # -S none: no secondary compression, so the launcher only has to read plain VCDIFF
             result = subprocess.run([args.xdelta, '-e', '-f', '-9', '-S', 'none', '-s', str(original), str(path),
-                                     str(delta)], capture_output=True, text=True)
+                                     str(delta)], capture_output=True, text=True, env=delta_environment)
             if result.returncode:
                 raise BuildError(f'xdelta3 failed on {rel}: {result.stderr.strip()}')
             add(archive, rel + '.xdelta', delta)

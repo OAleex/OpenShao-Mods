@@ -41,6 +41,6 @@ Git ignores the pack files, `dist/`, `game_dir.txt` and `tools/xdelta3.exe`.
 4. Create a release with the tag printed by the builder.
 5. Attach the `.tar.xz` from `dist/`.
 
-Publish the asset before the updated catalog on `main`.
+Publish the asset before the updated catalog on the repository's default branch.
 The launcher reads `mods.json`. Uploading a release alone does not add a mod or update.
 Use a higher version for an update and a new catalog entry for a different mod.

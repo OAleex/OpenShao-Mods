@@ -1,0 +1,543 @@
+{
+  "schema": 1,
+  "name": "Shaolin Monks Recomp Krypt",
+  "release_url": "https://github.com/OAleex/ShaolinMonksRecompKrypt/releases/download/{id}-v{version}/{id}-{version}.tar.xz",
+  "game": {
+    "title": "Mortal Kombat: Shaolin Monks (USA, Europe)",
+    "xbe_sha256": "48240902bf4a04eb89376217c529531032d3370749bcce91a194878cc49db74a"
+  },
+  "mods": [
+    {
+      "id": "LanguagePack_PT-BR",
+      "name": "LanguagePack PT-BR",
+      "summary": "Brazilian Portuguese dub, subtitles, text and fonts.",
+      "authors": [
+        "OAleex Traduções"
+      ],
+      "website": "https://oaleextraducoes.com/posts/2023/10/Mortal-Kombat-Shaolin-Monks/mortal-kombat-shaolin-monks-xbox/",
+      "type": "language",
+      "language": "pt-BR",
+      "install_dir": "languages/LanguagePack_PT-BR",
+      "cover": "mods/LanguagePack_PT-BR/cover.png",
+      "sources": {
+        "fonts/small.xpr": {
+          "file": "default.xbe",
+          "offset": 5362664,
+          "size": 18432
+        },
+        "fonts/large.xpr": {
+          "file": "default.xbe",
+          "offset": 5447704,
+          "size": 133120
+        }
+      },
+      "versions": [
+        {
+          "version": "2.0.0",
+          "date": "2026-10-18",
+          "recomp": "0.1.0",
+          "url": "https://github.com/OAleex/ShaolinMonksRecompKrypt/releases/download/LanguagePack_PT-BR-v2.0.0/LanguagePack_PT-BR-2.0.0.tar.xz",
+          "size": 86597144,
+          "sha256": "6596c7ffbcce997a5d8bfe3444d6e1ef78f14a57bdd4ecacf6f8234a09a754c5",
+          "files": 1082,
+          "patches": [
+            {
+              "path": "fonts/large.xpr",
+              "source": {
+                "file": "default.xbe",
+                "offset": 5447704,
+                "size": 133120
+              },
+              "source_sha256": "3d059a3429c8d492d85839aae55cd73bd69804961ed239b2480e2ea79c7600f7",
+              "target_sha256": "5672b8cd01ed951db3048328293402588aae787e767a1de12b26611325043e25"
+            },
+            {
+              "path": "fonts/small.xpr",
+              "source": {
+                "file": "default.xbe",
+                "offset": 5362664,
+                "size": 18432
+              },
+              "source_sha256": "cc442256ded1937a86d94401fdf91e165b12f614374edae0795fb58cd60cd127",
+              "target_sha256": "381f3910aa65bfa8e36027b6cfe20e36b37a939bd7713180bbc05c58830dafb5"
+            },
+            {
+              "path": "gamedata/record00144.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 144
+              },
+              "source_sha256": "249b2d8a7563b50365f88af576c7af11def4d4886a7a3ea703f75bb6d7c6ecb0",
+              "target_sha256": "b49cabd19d481225dd0b1b3e2ef9381ba0a1e9af72aa8ce764311a15276e9b45"
+            },
+            {
+              "path": "gamedata/record00146.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 146
+              },
+              "source_sha256": "4465634520ba94d44433b60e8eac506e52d476c85c069eb61d7d4bf8b2de9c5a",
+              "target_sha256": "01abb946c8dab943b14be02c464cdfa583c29f74c0f49cc58ea472f2c5f972c4"
+            },
+            {
+              "path": "gamedata/record00156.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 156
+              },
+              "source_sha256": "38127178533c61d2518e99321c1c8b6e08b792b8645f8a812da29c9accfc6f08",
+              "target_sha256": "c5b2f94ca2a73cb9589a4ae6575fa21cb37f9fef9b072ed0aea0230f7ccd67f6"
+            },
+            {
+              "path": "gamedata/record00158.bin",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 158
+              },
+              "source_sha256": "65bdc21898a00e2ba52c55f1ad774cf517636c6053e2024fefb2f902bd3d409e",
+              "target_sha256": "d814223588dcfcfa2ec1b626054bb59d3efbdb01cfc7a53c43c03c0a92ad7e85"
+            },
+            {
+              "path": "gamedata/record00164.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 164
+              },
+              "source_sha256": "0aa432b98a3b2e3cc9c8380fbe9de7c3d120f8c6be04dc0693248e317bd82939",
+              "target_sha256": "5f843b41f75e470187bf29ec4f3ee2ad376046d047bdd6b9182a45fdf2e79c63"
+            },
+            {
+              "path": "gamedata/record00169.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 169
+              },
+              "source_sha256": "6cc68a3b13a350697c6007d08efc3787f659d5d32d8bded61cc4a760fb271088",
+              "target_sha256": "6465a50fff4f5d4ce4c863ce372352fa92081649e1fb6add5c648265cb9e9879"
+            },
+            {
+              "path": "gamedata/record00198.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 198
+              },
+              "source_sha256": "372349c242daba90a84baf54bb4f652b48d664397912f1299e2431bae9188a5f",
+              "target_sha256": "6fa190e6b45b6598a4ce0fbd7f2198d8d02a200b06a88210881452982df46eba"
+            },
+            {
+              "path": "gamedata/record00204.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 204
+              },
+              "source_sha256": "d21ce22380496bda88177747030a71ce97625021337c3d4a847d8a632167bcaa",
+              "target_sha256": "66b637c435d75044e660e80e109a7c32f3e877480a536fb91b2844af5e717407"
+            },
+            {
+              "path": "gamedata/record00209.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 209
+              },
+              "source_sha256": "f1f85b8cde0841cc9807a49c6768e94901071941484e8dab94e2f65bfc75e1f2",
+              "target_sha256": "98105e31a37d974254c7cfd2bad9a136d8fa00e25b9b9bb4b796b99bc22216a6"
+            },
+            {
+              "path": "gamedata/record00214.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 214
+              },
+              "source_sha256": "d999e1e116f9a43d56b945aa943da4c245aecbdffba7ba1c6f941a3debf4b417",
+              "target_sha256": "a49246cb585b99aaf085d856fd20d7e232c9db108138d7731a798937ea18c9cd"
+            },
+            {
+              "path": "gamedata/record00219.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 219
+              },
+              "source_sha256": "e05a80bb4568024871684472f644af3039cbe715e5273c6619eed9872ca7a904",
+              "target_sha256": "e91c134cd96f71b292be302e67b3bb65bc73e6243207e7bc8826ea5b5dbb5ec9"
+            },
+            {
+              "path": "gamedata/record00224.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 224
+              },
+              "source_sha256": "779f0fefd199827ad2297b109dcd005f928817d5f70696c8dbbe214a7c01002e",
+              "target_sha256": "41de2a0fa51970b94438f246d34d6e2df7a88d17eaadffe7257a2140b763f5b1"
+            },
+            {
+              "path": "gamedata/record00231.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 231
+              },
+              "source_sha256": "3ef68e920973d5d16175925f3ca4cdb6928731fff108b3b76e5a5389182b9a26",
+              "target_sha256": "1030405d5d604869a7998d04d5628e0660fe630688e2235e58d8e5af48a721b7"
+            },
+            {
+              "path": "gamedata/record00274.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 274
+              },
+              "source_sha256": "bd4baccc14a06a6406ec4be8f60aa4dabf7d2393b5caea052464c056e3fee608",
+              "target_sha256": "6b55e6405502f12696afa5167206c6954292cd5df99b0bc2a3bec3ce3ab2d4e8"
+            },
+            {
+              "path": "gamedata/record00275.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 275
+              },
+              "source_sha256": "b2275f1e642b8ef01cf7a84f5406d7176514fe8e4101ddc57c00135a2d7afc2e",
+              "target_sha256": "91b6292d62a60157e3ec87af73a0e464bd006491736bace619aa91d4c5576933"
+            },
+            {
+              "path": "gamedata/record00276.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 276
+              },
+              "source_sha256": "50c04619bdf8f89ee1fe6127942423de5e6543ab5d3dd75580e6ec1d0215076d",
+              "target_sha256": "8d043d99191de0547f2775dafb3bbd7c29a85feabbf35ae79ae384b294e39081"
+            },
+            {
+              "path": "gamedata/record00277.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 277
+              },
+              "source_sha256": "b2ff2d38dbaebf9ad7f2a61f92207d80e295d81b13d9be4378c9313c1f7f1fc8",
+              "target_sha256": "166f86ffe12f31a473826c76bd67db365fa5c01b79bc63d1fd31fe44b5856425"
+            },
+            {
+              "path": "gamedata/record00278.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 278
+              },
+              "source_sha256": "3e1ce3c536a46fb7684c0cc868c0101d61eade5474b7c8c47f97f38af1d88dde",
+              "target_sha256": "07496490036a07f833c88e69a3327a72cf6db63081b7d36822bc24c135cbf4ce"
+            },
+            {
+              "path": "gamedata/record00715.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 715
+              },
+              "source_sha256": "ff9b017d96dd96c8df667d960c74793090b0f9c7c0a3d38413e7430bab34e275",
+              "target_sha256": "84046c3a944ffa8cdc3e7e66fba9d844658213f9cc0abb1390bb6f3ce0411e44"
+            },
+            {
+              "path": "gamedata/record00716.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 716
+              },
+              "source_sha256": "889c1efd216fd9c71243a08b494ed2eb4a1df2482c6ad584f47a940b622bc9fe",
+              "target_sha256": "55fcf54d3493ac4a68d277edad8f8adfc5c9e05ee4c1a3747b08c08385346521"
+            },
+            {
+              "path": "gamedata/record00717.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 717
+              },
+              "source_sha256": "817a16916ffc6cc2f879209f090f259f352147dbb1d1b0fe889388ee4dbada89",
+              "target_sha256": "cd90538a1e8ec354355a2578d1510b676a4f192d1e37cd6372b83a0861439381"
+            },
+            {
+              "path": "gamedata/record00718.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 718
+              },
+              "source_sha256": "84567205c3307dc7dfd16d66804ccf0fe5c16ccce157a9fe35122605e26cc999",
+              "target_sha256": "f72f0c7212ea7c00a5342ee238910b92957845aef6f77c045988ba676d238024"
+            },
+            {
+              "path": "gamedata/record00719.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 719
+              },
+              "source_sha256": "31d722b28e5b826e59e104dc471aa82ff740cf8b2d7712752ea8d6421999ab05",
+              "target_sha256": "07762a69e35145d14b3070a84609e25dd0a78b09b681900c01e2d34fae8d5562"
+            },
+            {
+              "path": "gamedata/record00720.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 720
+              },
+              "source_sha256": "94fa84297ed345c0d40da60bb4e67125185376b7d09c8aed1d26408feb33a505",
+              "target_sha256": "ec944ff5bfb50a65ba7de08ed5d152c40090d67574d75e8068750210d2063dab"
+            },
+            {
+              "path": "gamedata/record00721.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 721
+              },
+              "source_sha256": "666045e783effc6a34da32ec85faab638d8cae3a95a9ee9142fcc6a49867c4e3",
+              "target_sha256": "83f24af073acf1b8b3845c548b8095358eeef102710b5949db9bcd3fc239ec19"
+            },
+            {
+              "path": "gamedata/record00722.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 722
+              },
+              "source_sha256": "cd8c60c71ccab957f96d477b6f9ce68344b0c0dd60934133ffbb0aa4b3ca03a8",
+              "target_sha256": "bffc1bff17e04aaa02b54d8dc00e56f435804ef1a80715a40803c3eab3f92e82"
+            },
+            {
+              "path": "gamedata/record00723.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 723
+              },
+              "source_sha256": "60292a0f36c22408c28fbd337c1df8dd96091c9adec559c9fe8affe8334f8ef2",
+              "target_sha256": "2047929887907281255008863f6ef781e2304f1610080cb72c70157b85f5e2d8"
+            },
+            {
+              "path": "gamedata/record00724.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 724
+              },
+              "source_sha256": "d019c6fb551e5ca4329f2cd31df116894f1281bef465b503dd9c580dce2ad56a",
+              "target_sha256": "36b6d24774ddd1698987b77ae28eb7d6a4b29ac652d6bae691cd35d19aed1465"
+            },
+            {
+              "path": "gamedata/record00759.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 759
+              },
+              "source_sha256": "c88cd16d7a37edeef3dea954104635d3a2e2c43d7a3a22e9cec39f509c85b91c",
+              "target_sha256": "b5ca5b8bc150513cb5e63c2ee5114bc0cb1ac35a641aad5c0f0b5fa5db62cffb"
+            },
+            {
+              "path": "gamedata/record00760.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 760
+              },
+              "source_sha256": "68350a73e9cf4c2b7badf86e96590fb5bfe233da177eb64b6323f50c08169288",
+              "target_sha256": "33cc0b721fede5ab92ab264962a3e5ea4c351af2b7acaeb75041a14b9887804d"
+            },
+            {
+              "path": "gamedata/record00761.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 761
+              },
+              "source_sha256": "9b019b6d1fdc96dfc749c04f951d6e17796825389ae31960114865f819af9cde",
+              "target_sha256": "c554a72b3b6d0a4669b7146c1c0ef98c23086d79db3e9559e895daa43a7f54d8"
+            },
+            {
+              "path": "gamedata/record00835.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 835
+              },
+              "source_sha256": "774417122f1ebf670256a09bbe126cd1f8391bbb63f6bce5a548fe26611af904",
+              "target_sha256": "c6cb0beccd7add799b51894511d1e56aa5dbe8d6c5019501fec3e051405ec697"
+            },
+            {
+              "path": "gamedata/record00836.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 836
+              },
+              "source_sha256": "67aa3100510b51e3b3a79ab0555b25bdcb2bcad99c71538a8775a5f4ad94b932",
+              "target_sha256": "e5afea731b5d67532033b90e312cb71fe04628e4b155184fc1a858b05500f9f9"
+            },
+            {
+              "path": "gamedata/record00837.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 837
+              },
+              "source_sha256": "600e23d7f777635d46bf07939e265017f0b75c97f0f7d6fc575ee85613cad0de",
+              "target_sha256": "6753c7aa4b1f38bef0855401c97b11a1702d3fc1639fd6aba21848cb5025a3a1"
+            },
+            {
+              "path": "gamedata/record00838.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 838
+              },
+              "source_sha256": "be2040cc1187a8b2af27739c59bf70775e02f35777ec5e043da761f65bfd0eac",
+              "target_sha256": "f1329f51a48fc1273e8b9dd078a0b1b7654296d4f355d1fc636ed64ed884a9ca"
+            },
+            {
+              "path": "gamedata/record00843.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 843
+              },
+              "source_sha256": "ec17bb557575e3ee609d20ce8e15fd3b96da6fd01f2b205168626f9835b497e8",
+              "target_sha256": "50b34e50bbc916c1ce1b24f84393bd0817e53c69dfb703173f250655eb6a47d8"
+            },
+            {
+              "path": "gamedata/record00844.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 844
+              },
+              "source_sha256": "5a15c4db99de8963c79f44bc640f2428b403399fc17d61c308cb4ce81da48d2c",
+              "target_sha256": "44122e636e0df930901753ac3bcd6a1a23491177e6743068974cc229eb33a2ea"
+            },
+            {
+              "path": "gamedata/record00845.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 845
+              },
+              "source_sha256": "352c3163244f259010865c44b14f56e54ad0bacb9fb77ca96cf9eb9da2c295ac",
+              "target_sha256": "62f78ea80990cc191e78f4b579288f1a5c9e5140aaa00c871230c7c36e950175"
+            },
+            {
+              "path": "gamedata/record00846.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 846
+              },
+              "source_sha256": "2ff70fe159eeea5c40900dac8ec5cdaffe037293d6f19cc8036b78a768f666e4",
+              "target_sha256": "02e1e6813ab9ea63b730ced93c247658095a227538a918a352b12d68cc6cd01c"
+            },
+            {
+              "path": "gamedata/record00847.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 847
+              },
+              "source_sha256": "a661cde341aa59fe9bedee64035f73eae5ef9b9f072f696658bbf9bdda3ddbd9",
+              "target_sha256": "126fbd46bbb76a87951f555031b5a09a5a047e655803e4d87a7da4f916e59b02"
+            },
+            {
+              "path": "gamedata/record00848.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 848
+              },
+              "source_sha256": "a94f15c8e79dbc5d2d474e7df908d7931b1b00a9f69a00e42bd8f0303dd2f50d",
+              "target_sha256": "023d91c18b5f759bf17f111ee000c2f2763337e8eb20f9b8827128dc5d3448a8"
+            },
+            {
+              "path": "gamedata/record00849.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 849
+              },
+              "source_sha256": "89a5cb33b91f4cf14508bba83dbdfb3287f8876d353e330bfc90b02a0b08a0ef",
+              "target_sha256": "563c43dc4d6d4da746d593e757cf2457f446b09caec81ea5f5cde32b98fe0ca8"
+            },
+            {
+              "path": "gamedata/record00854.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 854
+              },
+              "source_sha256": "9e97a7737bdc5ff25017deca2e077b5ac95afca15fbefaf484d5962107d01194",
+              "target_sha256": "b6538b72b1958c13dad4aef429b97f9706e0690e4fc5d61184085c5a4a2fc2d9"
+            },
+            {
+              "path": "gamedata/record00859.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 859
+              },
+              "source_sha256": "0e69a17ed528b4b4dd2faaca6ebe3ce30812a7d8ebc796554726f75af6fc130d",
+              "target_sha256": "dc82e22598cf6889cab40974b4ec42b6a6bbc318eb4be4326fa1b6ce3e7cb669"
+            },
+            {
+              "path": "gamedata/record00864.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 864
+              },
+              "source_sha256": "4b5e07757cfe47e9b95837e4ad513f8024b38528b58dc97f19d5259cc6c92011",
+              "target_sha256": "83bc16d84891a9c92a484453bd1824887e155eaf088b45ca241ade21bc8452ac"
+            },
+            {
+              "path": "gamedata/record00869.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 869
+              },
+              "source_sha256": "b770d70ecd768e8214a21559fc60d877779f92961bf508d663482a64967cd686",
+              "target_sha256": "7b45fb5b7446aa59c7b4def0486b2220d6dcc510c3bed23be15ee04c6d2594e8"
+            },
+            {
+              "path": "gamedata/record00874.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 874
+              },
+              "source_sha256": "73d468ee55df12d78f9e8d4fcc7faa1532cfcf4c694e910d429082163a1f5bfc",
+              "target_sha256": "590f248e79aae4cb82d044648e727e86673d7d883bd4768ed96baa2b0166a600"
+            },
+            {
+              "path": "gamedata/record00879.bin",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 879
+              },
+              "source_sha256": "249638806946a58927e2a8ab7d6cc7f07f3114f7777c747081b892ab7f995783",
+              "target_sha256": "7c45d26e9dfac3566f5ac70acc7d027b317bd00219982203d870dc2ae2973733"
+            },
+            {
+              "path": "gamedata/record00884.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 884
+              },
+              "source_sha256": "b5475ba8f912b986c492298799481240e6dd7247a8b6ca1e8a3c603ee68c687f",
+              "target_sha256": "93cec71321fc504f7b61be26cfecc7f3ddceb9ac6129fd0df31af7115daeba45"
+            },
+            {
+              "path": "gamedata/record00889.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 889
+              },
+              "source_sha256": "cf25e7c6529db15c6a5ac9b882f387e85878a38ec3a58929473c440705cac769",
+              "target_sha256": "dd432c29790fcbe008f2cae66b1b6e4b7ff32591ef4e55a8b5b25447f40acb51"
+            },
+            {
+              "path": "gamedata/record00894.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 894
+              },
+              "source_sha256": "055d300694ed826dccbe9be218100308fca91895cfcbf188de3d675e64cb8fee",
+              "target_sha256": "1792b985b8d6713b5d40859d97f34c5f5d9fdad24101ac24b80028df90e3d188"
+            },
+            {
+              "path": "gamedata/record00899.ewdf",
+              "source": {
+                "wad": "GAMEDATA",
+                "record": 899
+              },
+              "source_sha256": "c9970f284dd7f3d73ce00ea559cbdb8b6d14051e3d400ffe716a3bb922176f29",
+              "target_sha256": "6bcd8a3570294ee215d1e33e2c5649cb590858c0e7ba69dfafac520ebf75e2f4"
+            }
+          ]
+        }
+      ],
+      "features": [
+        "fonts",
+        "gamedata",
+        "movies",
+        "voices"
+      ]
+    }
+  ]
+}

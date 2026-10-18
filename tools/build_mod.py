@@ -88,7 +88,7 @@ def metadata(mod, files, requested):
         for prefix,feature in [('files/','files'),('gamedata/','gamedata'),('audio/voices/','voices'),('fonts/','fonts'),('audio/movies/','movies')]:
             if path.startswith(prefix):features.add(feature)
     extended=kind!='language' or mod.get('language')!='pt-BR' or mod.get('install_dir')!='languages/'+mod_id or routines or mod.get('dependencies') or mod.get('conflicts') or 'files' in features
-    minimum='0.2.0' if extended else '0.1.0'
+    minimum='0.2.0'
     recomp=max((requested,minimum),key=version_key)
     result={key:mod[key] for key in ('id','name','summary','authors','type','language','language_name','install_dir','dependencies','conflicts') if key in mod}
     result.update(features=sorted(features),routines=routines)
@@ -209,7 +209,7 @@ def build(args):
     plain, patched = [], []
     for path in files:
         rel = path.relative_to(pack).as_posix()
-        if rel == 'manifest.json' or rel.endswith('.xdelta') or path.is_symlink():
+        if rel.lower() in ('mod.json','manifest.json') or rel.lower().endswith('.xdelta') or path.is_symlink():
             raise BuildError(f'{rel} is reserved or is a symbolic link')
         source = source_of(mod, rel)
         (patched if source else plain).append((rel, path, source))
@@ -255,7 +255,7 @@ def build(args):
                         files=[{'path': rel, 'size': path.stat().st_size, 'sha256': sha256_file(path)}
                                for rel, path, _ in plain])
         encoded = (json.dumps(manifest, indent=2, ensure_ascii=False) + '\n').encode('utf-8')
-        info = tarfile.TarInfo('manifest.json')
+        info = tarfile.TarInfo('mod.json')
         info.size, info.mode, info.mtime = len(encoded), 0o644, ARCHIVE_TIME
         archive.addfile(info, io.BytesIO(encoded))
 

@@ -28,7 +28,7 @@ Use `build.bat <id>` when the catalog contains multiple mods.
 
 The builder writes a `.tar.xz` to `dist/` and updates `mods.json` with the release information and SHA-256 hash.
 Wait for the builder to print `Release tag` before using the package. Files ending in `.building` are incomplete.
-The package contains mod files, patches and a manifest. Building does not publish it.
+The package contains mod files, patches and `mod.json`. Building does not publish it.
 For replacements outside `gamedata/`, define the original files in the catalog's `sources` field.
 
 Git ignores the pack files, `dist/`, `game_dir.txt` and `tools/xdelta3.exe`.

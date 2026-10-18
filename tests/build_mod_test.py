@@ -13,6 +13,27 @@ spec.loader.exec_module(builder)
 
 
 class ManifestTest(unittest.TestCase):
+    def test_metadata_names_are_reserved_without_case_distinctions(self):
+        for name in ('mod.json','MOD.JSON','manifest.json','MANIFEST.JSON'):
+            with self.subTest(name=name), tempfile.TemporaryDirectory() as temporary:
+                root=Path(temporary)
+                pack=root/'pack'
+                pack.mkdir()
+                (pack/name).write_text('{}')
+                mod=dict(id='TestMod',name='Test',summary='Test',authors=['Tester'],type='data',
+                         install_dir='packages/TestMod',versions=[])
+                old_index=builder.INDEX
+                try:
+                    builder.INDEX=root/'mods.json'
+                    builder.INDEX.write_text(json.dumps(dict(schema=1,game={'xbe_sha256':'0'*64},
+                        release_url='https://example.invalid/{id}-{version}.tar.xz',mods=[mod])))
+                    with self.assertRaises(builder.BuildError):
+                        builder.build(argparse.Namespace(mod='TestMod',version='1.0.0',pack=pack,game=None,
+                                                        xdelta='xdelta3',output=root/'dist',recomp='0.1.0'))
+                    self.assertFalse((root/'dist/TestMod-1.0.0.tar.xz').exists())
+                finally:
+                    builder.INDEX=old_index
+
     def test_general_mod_metadata_and_routine_scripts_survive_packaging(self):
         with tempfile.TemporaryDirectory() as temporary:
             root=Path(temporary)
@@ -30,7 +51,8 @@ class ManifestTest(unittest.TestCase):
                 builder.build(argparse.Namespace(mod='Gameplay',version='1.0.0',pack=pack,game=None,
                                                 xdelta='xdelta3',output=root/'dist',recomp='0.1.0'))
                 with tarfile.open(root/'dist/Gameplay-1.0.0.tar.xz') as archive:
-                    manifest=json.load(archive.extractfile('manifest.json'))
+                    manifest=json.load(archive.extractfile('mod.json'))
+                    self.assertNotIn('manifest.json',archive.getnames())
                     self.assertEqual(manifest['schema'],2)
                     self.assertEqual(manifest['recomp'],'0.2.0')
                     self.assertEqual(manifest['dependencies'],[{'id':'Assets','version':'1.0.0'}])
@@ -87,9 +109,11 @@ class ManifestTest(unittest.TestCase):
                 builder.build(argparse.Namespace(mod='TestMod', version='1.2.3', pack=pack, game=None,
                                                 xdelta='xdelta3', output=root / 'dist', recomp='0.1.0'))
                 with tarfile.open(root / 'dist/TestMod-1.2.3.tar.xz') as archive:
-                    manifest = json.load(archive.extractfile('manifest.json'))
+                    manifest = json.load(archive.extractfile('mod.json'))
+                    self.assertNotIn('manifest.json',archive.getnames())
                     self.assertEqual(manifest['id'], 'TestMod')
                     self.assertEqual(manifest['version'], '1.2.3')
+                    self.assertEqual(manifest['recomp'], '0.2.0')
                     self.assertEqual(manifest['install_dir'], 'languages/TestMod')
                     self.assertEqual(manifest['patches'], [])
                     self.assertEqual(manifest['files'], [{'path': 'new.txt', 'size': 15,

@@ -22,7 +22,7 @@ class ManifestTest(unittest.TestCase):
         xdelta=str(executable) if executable.is_file() else shutil.which('xdelta3')
         if not xdelta:
             self.skipTest('xdelta3 is required for the patch integration check')
-        with tempfile.TemporaryDirectory(prefix='krypt patch test ') as temporary:
+        with tempfile.TemporaryDirectory(prefix='mod patch test ') as temporary:
             root=Path(temporary)
             pack,game=root/'pack',root/'original game'
             (pack/'files').mkdir(parents=True)

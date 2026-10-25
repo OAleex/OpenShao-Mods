@@ -288,12 +288,12 @@ def build(args):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Build a Krypt mod release.')
+    parser = argparse.ArgumentParser(description='Build an OpenShao mod release.')
     parser.add_argument('mod', nargs='?', help='mod id in mods.json; optional when there is only one mod')
     parser.add_argument('--version', required=True)
     parser.add_argument('--game', type=Path, help='extracted game folder, with default.xbe and GAMEDATA.WAD')
     parser.add_argument('--pack', type=Path, help='finished mod files (default: mods/<id>/pack)')
-    parser.add_argument('--recomp', default='0.1.0', help='oldest Shaolin Monks Recomp version the mod supports')
+    parser.add_argument('--recomp', default='0.1.0', help='oldest OpenShao version the mod supports')
     parser.add_argument('--xdelta', default='xdelta3', help='xdelta3 executable')
     parser.add_argument('--output', type=Path, default=ROOT / 'dist')
     args = parser.parse_args()

@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "name": "Shaolin Monks Recomp Krypt",
-  "release_url": "https://github.com/OAleex/ShaolinMonksRecompKrypt/releases/download/{id}-v{version}/{id}-{version}.tar.xz",
+  "name": "OpenShao Mods",
+  "release_url": "https://github.com/OAleex/OpenShao-Mods/releases/download/{id}-v{version}/{id}-{version}.tar.xz",
   "game": {
     "title": "Mortal Kombat: Shaolin Monks (USA, Europe)",
     "xbe_sha256": "48240902bf4a04eb89376217c529531032d3370749bcce91a194878cc49db74a"
@@ -36,7 +36,7 @@
           "version": "2.0.0",
           "date": "2026-10-18",
           "recomp": "0.2.0",
-          "url": "https://github.com/OAleex/ShaolinMonksRecompKrypt/releases/download/LanguagePack_PT-BR-v2.0.0/LanguagePack_PT-BR-2.0.0.tar.xz",
+          "url": "https://github.com/OAleex/OpenShao-Mods/releases/download/LanguagePack_PT-BR-v2.0.0/LanguagePack_PT-BR-2.0.0.tar.xz",
           "size": 86596656,
           "sha256": "3fe00656f8084364e1543e6669d5fd5db3c381e821e5d815c1a59d6f96eb1294",
           "files": 1082,

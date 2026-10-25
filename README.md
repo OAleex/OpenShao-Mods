@@ -1,16 +1,16 @@
-# Shaolin Monks Recomp Krypt
+# OpenShao Mods
 
-Official mods for [Shaolin Monks Recomp](https://github.com/OAleex/ShaolinMonksRecomp).
+Official mods for [OpenShao](https://github.com/OAleex/OpenShao).
 The project creates and maintains every mod here.
 
 ## Install a mod
 
-Install and enable the mod in the launcher's **Mods** tab.
-For a downloaded `.tar.xz` package, use **Install from file...**.
+Install and enable the mod on the launcher's **Mods** page.
+For a downloaded `.tar.xz` package, use **Install from file**.
 The original game files remain unchanged.
 The catalog supplies new mods, languages and compatible updates to the launcher.
 Supported content includes textures, game resources, direct file replacements and Lua routine scripts.
-See [mod authoring](https://github.com/OAleex/ShaolinMonksRecomp/blob/main/docs/MODS.md) for formats and compatibility rules.
+See [mod authoring](https://github.com/OAleex/OpenShao/blob/main/docs/MODS.md) for formats and compatibility rules.
 
 ## Build a package
 
@@ -35,7 +35,7 @@ Git ignores the pack files, `dist/`, `game_dir.txt` and `tools/xdelta3.exe`.
 
 ## Publish a version
 
-1. Test the generated `.tar.xz` through **Mods > Install from file...**.
+1. Test the generated `.tar.xz` through **Mods > Install from file**.
 2. Review the updated `mods.json`.
 3. Commit the catalog change when the release is ready.
 4. Create a release with the tag printed by the builder.
@@ -44,3 +44,8 @@ Git ignores the pack files, `dist/`, `game_dir.txt` and `tools/xdelta3.exe`.
 Publish the asset before the updated catalog on the repository's default branch.
 The launcher reads `mods.json`. Uploading a release alone does not add a mod or update.
 Use a higher version for an update and a new catalog entry for a different mod.
+
+## License
+
+The tools and catalog in this repository are available under the [MIT License](LICENSE).
+This license does not cover the original game's code, assets, names, or artwork.
